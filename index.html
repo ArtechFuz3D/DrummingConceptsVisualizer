@@ -308,6 +308,11 @@
         <div class="pattern-grid" id="pattern-grid">
             <!-- Pattern grid will be populated by JavaScript -->
         </div>
+        
+        <div class="footer">
+            <p>Made with ❤️ by <a href="#" target="_blank">ArtechFuz3D</a></p>
+            <p>Learn drumming concepts through interactive visualization</p>
+        </div>
     </div>
 
     <script>
@@ -360,17 +365,17 @@
             },
             polyrhythm: {
                 name: "Polyrhythm",
-                description: "Two or more rhythms played simultaneously that don't align perfectly. This 3-against-2 pattern creates a complex, interlocking rhythm where kick plays in groups of 3 while snare plays in groups of 2.",
+                description: "Multiple rhythms played simultaneously. This example shows 3-against-2: kick plays in groups of 3 while snare plays in groups of 2, creating complex rhythmic tension.",
                 kick: [1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1],
-                snare: [0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0],
+                snare: [1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0],
                 hihat: [1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0],
                 crash: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
             },
             syncopation: {
                 name: "Syncopation",
-                description: "Emphasis on off-beats or unexpected rhythmic accents. This pattern places snare hits on the 'and' of beats, creating a groove that feels like it's pushing against the natural pulse.",
-                kick: [1, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 1, 0],
-                snare: [0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0],
+                description: "Emphasizing off-beats and weak beats to create rhythmic surprise. Notice how the snare hits on the 'and' of beats, creating a laid-back, funky feel.",
+                kick: [1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0],
+                snare: [0, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 1, 0],
                 hihat: [1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0, 1, 0],
                 crash: [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
             }
@@ -453,11 +458,6 @@
             stopPattern();
             
             currentPattern = patterns[patternName];
-            if (!currentPattern) {
-                console.error(`Pattern "${patternName}" not found`);
-                return;
-            }
-            
             currentStep = 0;
             
             // Update explanation
@@ -576,9 +576,7 @@
             // Restart current pattern with new tempo
             if (currentPattern) {
                 const patternName = Object.keys(patterns).find(key => patterns[key] === currentPattern);
-                if (patternName) {
-                    playPattern(patternName);
-                }
+                playPattern(patternName);
             }
         }
         
