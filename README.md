@@ -58,7 +58,7 @@ Visit `http://localhost:8000`
 
 ## 📸 Screenshots
 
-![screenshot](https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=1200&h=630&fit=crop)
+![screenshot](thumb.png)
 
 ---
 
